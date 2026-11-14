@@ -6,6 +6,8 @@ const ALLOWED_ORIGINS = new Set([
 const RESEND_ENDPOINT = 'https://api.resend.com/emails';
 const SUCCESS_MESSAGE = 'Thank you. Your mobile detailing enquiry has been sent.';
 const ERROR_MESSAGE = 'Unable to send your booking enquiry right now. Please try again.';
+const DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/;
+const TIME_REGEX = /^\d{2}:\d{2}$/;
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function buildCorsHeaders(origin) {
@@ -47,6 +49,17 @@ function escapeHtml(input) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
+}
+
+function formatDate(iso) {
+  const d = new Date(`${iso}T00:00:00Z`);
+  if (Number.isNaN(d.getTime())) return iso;
+  return d.toLocaleDateString('en-AU', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+}
+
+function formatTime(hhmm) {
+  const [h, m] = hhmm.split(':').map(Number);
+  return `${h % 12 || 12}:${String(m).padStart(2, '0')} ${h >= 12 ? 'PM' : 'AM'}`;
 }
 
 function renderOptional(value) {
@@ -91,13 +104,15 @@ export default {
       phone: sanitiseText(payload.phone, 60),
       fullPhone: sanitiseText(payload.fullPhone, 80),
       location: sanitiseText(payload.location, 160),
+      preferredDate: sanitiseText(payload.preferredDate, 20),
+      preferredTime: sanitiseText(payload.preferredTime, 10),
       email: sanitiseText(payload.email, 160),
       vehicleType: sanitiseText(payload.vehicleType, 120),
       rego: sanitiseText(payload.rego, 60),
       notes: sanitiseText(payload.notes, 2000)
     };
 
-    if (!booking.name || !booking.phoneCountryCode || !booking.phone || !booking.fullPhone || !booking.location) {
+    if (!booking.name || !booking.phoneCountryCode || !booking.phone || !booking.fullPhone || !booking.location || !DATE_REGEX.test(booking.preferredDate) || !TIME_REGEX.test(booking.preferredTime)) {
       return jsonResponse({ success: false, message: ERROR_MESSAGE }, 400, corsHeaders);
     }
 
@@ -110,12 +125,16 @@ export default {
     const safePhone = escapeHtml(booking.phone);
     const safeFullPhone = escapeHtml(booking.fullPhone);
     const safeLocation = escapeHtml(booking.location);
+    const prettyDate = formatDate(booking.preferredDate);
+    const prettyTime = formatTime(booking.preferredTime);
+    const safeDate = escapeHtml(prettyDate);
+    const safeTime = escapeHtml(prettyTime);
     const safeEmail = escapeHtml(renderOptional(booking.email));
     const safeVehicleType = escapeHtml(renderOptional(booking.vehicleType));
     const safeRego = escapeHtml(renderOptional(booking.rego));
     const safeNotes = escapeHtml(renderOptional(booking.notes));
 
-    const subject = `New Mobile Detailing Booking - ${booking.name}`;
+    const subject = `New Mobile Detailing Booking - ${booking.name} - ${prettyDate} ${prettyTime}`;
 
     const html = `
       <div style="font-family:Arial,sans-serif;background:#f6f4f1;padding:32px;color:#171717;">
@@ -127,6 +146,14 @@ export default {
           <div style="padding:28px;">
             <p style="margin:0 0 20px;font-size:16px;line-height:1.6;color:#4b4a47;">A new booking enquiry has been submitted through the OzShine mobile detailing page.</p>
             <table role="presentation" style="width:100%;border-collapse:collapse;">
+              <tr>
+                <td style="padding:12px 0;border-bottom:1px solid #eee7e1;font-weight:700;">Booking Date</td>
+                <td style="padding:12px 0;border-bottom:1px solid #eee7e1;"><strong>${safeDate}</strong></td>
+              </tr>
+              <tr>
+                <td style="padding:12px 0;border-bottom:1px solid #eee7e1;font-weight:700;">Booking Time</td>
+                <td style="padding:12px 0;border-bottom:1px solid #eee7e1;"><strong>${safeTime}</strong></td>
+              </tr>
               <tr>
                 <td style="padding:12px 0;border-bottom:1px solid #eee7e1;font-weight:700;">Name</td>
                 <td style="padding:12px 0;border-bottom:1px solid #eee7e1;">${safeName}</td>
@@ -174,6 +201,8 @@ export default {
       '',
       'A new booking enquiry has been submitted through the OzShine mobile detailing page.',
       '',
+      `Booking Date: ${prettyDate}`,
+      `Booking Time: ${prettyTime}`,
       `Name: ${booking.name}`,
       `Phone Country Code: ${booking.phoneCountryCode}`,
       `Phone Number: ${booking.phone}`,

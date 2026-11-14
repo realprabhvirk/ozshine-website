@@ -363,13 +363,15 @@ document.addEventListener('DOMContentLoaded', () => {
         phone,
         fullPhone: [phoneCountryCode, phone].filter(Boolean).join(' ').trim(),
         location: String(formData.get('location') || '').trim(),
+        preferredDate: String(formData.get('preferredDate') || '').trim(),
+        preferredTime: String(formData.get('preferredTime') || '').trim(),
         email: String(formData.get('email') || '').trim(),
         vehicleType: String(formData.get('vehicleType') || '').trim(),
         rego: String(formData.get('rego') || '').trim(),
         notes: String(formData.get('notes') || '').trim()
       };
 
-      if (!payload.name || !payload.phoneCountryCode || !payload.phone || !payload.location) {
+      if (!payload.name || !payload.phoneCountryCode || !payload.phone || !payload.location || !payload.preferredDate || !payload.preferredTime) {
         setFeedback(mobileBookingFeedback, 'Unable to send your booking enquiry right now. Please try again.', true);
         return;
       }
