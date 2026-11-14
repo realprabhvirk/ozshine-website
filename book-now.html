@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Now | OzShine Hand Car Wash</title>
+  <meta name="description" content="Book OzShine mobile detailing or find your nearest store and jump straight to the right booking page.">
+  <link rel="canonical" href="https://ozshinecarwash.com.au/book-now.html">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#c61b1f">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-book-now">
+  <header class="site-header">
+    <div class="container header-row">
+      <a href="index.html" class="logo" aria-label="OzShine Hand Car Wash home">
+        <img src="logo.png" alt="OzShine Hand Car Wash" class="logo-image">
+      </a>
+      <button class="mobile-menu-btn" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-overlay" data-nav-close></div>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+        <div class="mobile-nav-header">
+          <a href="index.html" class="logo" aria-label="OzShine Hand Car Wash home">
+            <img src="logo.png" alt="OzShine Hand Car Wash" class="logo-image">
+          </a>
+          <button class="mobile-menu-close" type="button" aria-label="Close menu" data-nav-close>Close</button>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html#locations-directory">Locations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="mobile.html" class="btn btn-light">Mobile Detailing</a>
+          <a href="book-now.html" class="btn btn-primary">Book Now</a>
+        </div>
+        <div class="mobile-nav-footer">
+          <p>Choose the closest location, or head to the booking page to lock in the right OzShine service.</p>
+          <div class="mobile-nav-cta">
+            <a href="#nearest-booking-form" class="btn btn-primary">Book Now</a>
+            <a href="contact.html#locations-directory" class="btn btn-light">Find a Location</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero-wrap book-now-wrap">
+      <div class="container book-now-intro">
+        <div class="section-head book-now-head" data-reveal>
+          <p class="eyebrow">Book Now</p>
+          <h1>Choose the booking path that fits your vehicle best.</h1>
+          <p>Book mobile detailing directly, or enter your postcode to find the nearest OzShine store and jump into the right booking calendar.</p>
+        </div>
+
+        <div class="booking-path-grid">
+          <article class="booking-path-card booking-path-card--mobile" data-reveal>
+            <span class="booking-path-card__label">Option A</span>
+            <h2>Need Mobile Detailing?</h2>
+            <p>Use the dedicated mobile detailing page if you want to send your vehicle details through and have our team contact you directly.</p>
+            <a href="mobile.html" class="btn btn-primary">Book Mobile Detailing</a>
+          </article>
+
+          <article class="booking-path-card booking-path-card--store" data-reveal>
+            <span class="booking-path-card__label">Option B</span>
+            <h2>Find Your Nearest Store</h2>
+            <p>Enter your postcode to find your nearest OzShine location.</p>
+            <div class="nearest-tool booking-finder" id="nearest-booking-form" data-location-finder data-finder-mode="booking">
+              <form class="nearest-form" novalidate>
+                <label class="sr-only" for="booking-postcode">Enter your postcode</label>
+                <div class="nearest-form__row">
+                  <input type="text" id="booking-postcode" class="form-control nearest-input" inputmode="numeric" autocomplete="postal-code" placeholder="Enter your postcode" maxlength="4">
+                  <button type="button" class="btn btn-primary nearest-submit">Find Location</button>
+                </div>
+                <p class="nearest-feedback" aria-live="polite"></p>
+              </form>
+              <div class="nearest-result" aria-live="polite"></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Location Bookings</p>
+          <h2>Book the OzShine location that suits your route.</h2>
+          <p>Each booking card below opens the correct Picktime page in a new tab so you can go straight from location choice to appointment booking.</p>
+        </div>
+
+        <div class="booking-location-grid" data-reveal>
+          <article class="booking-location-card" data-booking-location="Beenleigh">
+            <span class="location-chip">Beenleigh</span>
+            <h3>Beenleigh</h3>
+            <p>Best for drivers around Beenleigh Marketplace wanting a premium wash or detailing appointment with easy access.</p>
+            <div class="booking-location-card__meta">
+              <span>114-118 George St, Beenleigh QLD 4207</span>
+            </div>
+            <a href="https://www.picktime.com/beenleighozshinecarwash#book/services" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Book Beenleigh</a>
+          </article>
+
+          <article class="booking-location-card" data-booking-location="Karalee">
+            <span class="location-chip">Karalee</span>
+            <h3>Karalee</h3>
+            <p>Ideal for western-side drivers wanting a regular maintenance wash, a cleaner cabin or a more involved detailing appointment.</p>
+            <div class="booking-location-card__meta">
+              <span>39/52 Junction Rd, Chuwar QLD 4306</span>
+            </div>
+            <a href="https://www.picktime.com/kbozshinecarwash#book" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Book Karalee</a>
+          </article>
+
+          <article class="booking-location-card" data-booking-location="Browns Plains">
+            <span class="location-chip">Browns Plains</span>
+            <h3>Browns Plains</h3>
+            <p>Great for southern corridor drivers wanting a straightforward booking path for premium cleaning and detailing work.</p>
+            <div class="booking-location-card__meta">
+              <span>31 Grand Plaza Dr, Browns Plains QLD 4118</span>
+            </div>
+            <a href="https://www.picktime.com/kbozshinecarwash#book" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Book Browns Plains</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" aria-label="OzShine Hand Car Wash home">
+            <img src="logo.png" alt="OzShine Hand Car Wash" class="logo-image">
+          </a>
+          <p>Premium hand car wash and detailing with a cleaner booking flow across mobile detailing and physical store appointments.</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="mobile.html">Mobile Detailing</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer-meta">
+            <li><a href="contact.html">Find location phone numbers</a></li>
+            <li>Bookings essential for detailing</li>
+            <li>Gift vouchers available</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Locations</h4>
+          <ul class="footer-meta">
+            <li>Beenleigh</li>
+            <li>Karalee</li>
+            <li>Browns Plains</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 OzShine Hand Car Wash. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="qld-postcode-coordinates.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

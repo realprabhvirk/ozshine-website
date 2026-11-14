@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Detailing | OzShine Hand Car Wash</title>
+  <meta name="description" content="Book OzShine mobile detailing. Complete the form with your vehicle details and our team will contact you to arrange your detailing appointment.">
+  <link rel="canonical" href="https://ozshinecarwash.com.au/mobile.html">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#c61b1f">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-mobile">
+  <header class="site-header">
+    <div class="container header-row">
+      <a href="index.html" class="logo" aria-label="OzShine Hand Car Wash home">
+        <img src="logo.png" alt="OzShine Hand Car Wash" class="logo-image">
+      </a>
+      <button class="mobile-menu-btn" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-overlay" data-nav-close></div>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+        <div class="mobile-nav-header">
+          <a href="index.html" class="logo" aria-label="OzShine Hand Car Wash home">
+            <img src="logo.png" alt="OzShine Hand Car Wash" class="logo-image">
+          </a>
+          <button class="mobile-menu-close" type="button" aria-label="Close menu" data-nav-close>Close</button>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html#locations-directory">Locations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="mobile.html" class="btn btn-light">Mobile Detailing</a>
+          <a href="book-now.html" class="btn btn-primary">Book Now</a>
+        </div>
+        <div class="mobile-nav-footer">
+          <p>Choose the closest location, or head to the booking page to lock in the right OzShine service.</p>
+          <div class="mobile-nav-cta">
+            <a href="book-now.html" class="btn btn-primary">Book Now</a>
+            <a href="contact.html#locations-directory" class="btn btn-light">Find a Location</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero-wrap">
+      <div class="container page-hero">
+        <div class="page-hero__copy" data-reveal>
+          <p class="eyebrow">Mobile Detailing</p>
+          <h1>Book professional detailing with a smoother, clearer booking path.</h1>
+          <p>Tell us who you are, what you drive and what the vehicle needs. We&rsquo;ll contact you to arrange your OzShine detailing appointment.</p>
+          <div class="page-hero__meta">
+            <span>Vehicle details</span>
+            <span>Direct follow-up</span>
+            <span>Premium care</span>
+          </div>
+          <div class="btn-row">
+            <a href="#mobile-booking-form" class="btn btn-primary">Book Mobile Detail</a>
+            <a href="services.html" class="btn btn-secondary">Review Services</a>
+          </div>
+        </div>
+        <div class="page-hero__visual" data-reveal>
+          <img src="assets/paint-buff.jpg" alt="Premium paint correction and detailing work on a reflective vehicle surface" data-parallax>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container booking-layout">
+        <div class="contact-form" id="mobile-booking-form" data-reveal>
+          <div class="section-head">
+            <p class="eyebrow">Book Mobile Detailing</p>
+            <h2>Book a Mobile Detailing Service</h2>
+            <p>Complete the form below and we&rsquo;ll contact you to arrange your detailing appointment.</p>
+          </div>
+          <form action="#" method="POST" class="form-row" data-mobile-booking-form novalidate>
+            <div class="form-group">
+              <label for="mobile-name">Name</label>
+              <input type="text" id="mobile-name" name="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="mobile-phone">Phone Number</label>
+              <div class="phone-field">
+                <select id="mobile-phone-country" name="phoneCountryCode" class="form-control phone-field__code" aria-label="Country code" required>
+                  <option value="+61" selected>🇦🇺 +61</option>
+                  <option value="+64">🇳🇿 +64</option>
+                  <option value="+1">🇺🇸 +1</option>
+                  <option value="+44">🇬🇧 +44</option>
+                  <option value="+91">🇮🇳 +91</option>
+                  <option value="+65">🇸🇬 +65</option>
+                  <option value="+971">🇦🇪 +971</option>
+                  <option value="+27">🇿🇦 +27</option>
+                  <option value="+81">🇯🇵 +81</option>
+                  <option value="+49">🇩🇪 +49</option>
+                </select>
+                <input type="tel" id="mobile-phone" name="phone" class="form-control" inputmode="tel" autocomplete="tel-national" placeholder="412 345 678" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="mobile-location">Location</label>
+              <input type="text" id="mobile-location" name="location" class="form-control" placeholder="Suburb or service address" required>
+            </div>
+            <div class="form-group">
+              <label for="mobile-email">Email</label>
+              <input type="email" id="mobile-email" name="email" class="form-control" autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="mobile-vehicle-type">Vehicle Type</label>
+              <input type="text" id="mobile-vehicle-type" name="vehicleType" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="mobile-rego">Rego</label>
+              <input type="text" id="mobile-rego" name="rego" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="mobile-notes">Notes</label>
+              <textarea id="mobile-notes" name="notes" class="form-control"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" data-mobile-booking-submit>Send Booking Request</button>
+            <p class="form-feedback" data-mobile-booking-feedback aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="booking-stack">
+          <div class="contact-panel" data-reveal>
+            <h3>Before you send it through</h3>
+            <p>The more detail you include, the easier it is for our team to match your vehicle with the right level of detailing and timing.</p>
+            <ul class="point-list">
+              <li>Include the vehicle type so we can estimate the right package.</li>
+              <li>Add the rego if you want the booking handled quickly and accurately.</li>
+              <li>Use the notes field for paint condition, interior work or special requests.</li>
+            </ul>
+          </div>
+
+          <div class="contact-panel contact-panel--image" data-reveal>
+            <div class="contact-visual">
+              <img src="assets/luxury-interior.jpg" alt="Premium interior detailing with clean leather and refined finishes" data-parallax>
+            </div>
+          </div>
+
+          <div class="contact-panel" data-reveal>
+            <h3>Need a direct location number first?</h3>
+            <p>If you would rather speak to a location directly, head to the contact page for location numbers, directions and the nearest-location finder.</p>
+            <div class="btn-row">
+              <a href="contact.html#locations-directory" class="btn btn-primary">View Locations</a>
+              <a href="services.html#full-detail" class="btn btn-light">See Full Detail</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" aria-label="OzShine Hand Car Wash home">
+            <img src="logo.png" alt="OzShine Hand Car Wash" class="logo-image">
+          </a>
+          <p>Premium hand car wash and detailing with a cleaner booking flow for drivers ready to arrange mobile detailing.</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="mobile.html">Mobile Detailing</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer-meta">
+            <li><a href="contact.html">Find location phone numbers</a></li>
+            <li>Bookings essential for detailing</li>
+            <li>Gift vouchers available</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Locations</h4>
+          <ul class="footer-meta">
+            <li>Beenleigh</li>
+            <li>Karalee</li>
+            <li>Browns Plains</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 OzShine Hand Car Wash. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
